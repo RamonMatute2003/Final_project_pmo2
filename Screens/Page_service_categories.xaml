@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_project.Screens.Page_service_categories">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="anadir"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <Grid HorizontalOptions="Center">
+        <Image Source="background.svg" Aspect="AspectFill" Grid.RowSpan="9"/>
+        <ScrollView>
+            <StackLayout>
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <Label TextColor="#161FFF" HorizontalTextAlignment="Center" Margin="10,0,0,0" FontSize="18" Text="Categoria de servicios" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="asociaciones.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                        <Label Grid.Column="1" FontSize="18" Text="Asociaciones" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                    </Grid>
+                </Border>
+
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="automovil.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                        <Label Grid.Column="1" FontSize="18" Text="Automotrices" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                    </Grid>
+                </Border>
+
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="grafico.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                        <Label Grid.Column="1" FontSize="18" Text="Cuotas y creditos" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                    </Grid>
+                </Border>
+
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="educacion.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                        <Label Grid.Column="1" FontSize="18" Text="Instituciones educativas" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                    </Grid>
+                </Border>
+
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="paloma.png" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                        <Label Grid.Column="1" FontSize="18" Text="Funerarias" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                    </Grid>
+                </Border>
+
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="foco.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                        <Label Grid.Column="1" FontSize="18" Text="Servicios publicos" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                    </Grid>
+                </Border>
+
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="wifi.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                        <Label Grid.Column="1" FontSize="18" Text="Telecomunicaciones" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="0,5,0,5" />
+                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                    </Grid>
+                </Border>
+
+                <Border Margin="10,10,10,20" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="otros.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                        <Label Grid.Column="1" FontSize="18" Text="Otros" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                    </Grid>
+                </Border>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

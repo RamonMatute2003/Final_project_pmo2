@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_project.Screens.Page_verification_code"
+             Title="Verificacion de codigo"
+             Shell.FlyoutBehavior="Flyout"
+             >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="background.svg" Aspect="AspectFill" Grid.RowSpan="5"/>
+
+        <Label Text="Te hemos enviado un código al correo." TextColor="White" Grid.Row="0" FontSize="18" Margin="20,35,0,20" />
+        <Label Text="Para finalizar la verificación, revisa tu correo electrónico y proporciona el código de activación de 6 dígitos que hemos enviado." TextColor="White" Grid.Row="1" FontSize="18" Margin="20,5,10,60" />
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Entry Grid.Column="0" HorizontalTextAlignment="Center" Margin="25,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry Grid.Column="1" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry Grid.Column="2" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry Grid.Column="3" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry Grid.Column="4" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry Grid.Column="5" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+        </Grid>
+
+        <Label Text="Tiempo: 1:00" HorizontalOptions="Center" VerticalOptions="Start" TextColor="White" Grid.Row="3" Margin="20,190,10,0" />
+        <Button Grid.Row="4" HorizontalOptions="Center" VerticalOptions="Start" Text="Volver a enviar codigo" WidthRequest="250"/>
+    </Grid>
+</ContentPage>

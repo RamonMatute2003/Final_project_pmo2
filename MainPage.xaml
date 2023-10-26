@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_project.MainPage"
+             Title="Iniciar sesion"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="background.svg" Aspect="AspectFill" Grid.RowSpan="3"/>
+
+        <StackLayout Grid.Row="0" WidthRequest="300" VerticalOptions="Start" HorizontalOptions="Center" Margin="25,25">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="logo.svg" Grid.Column="0" HeightRequest="100"/>
+                <Label Text="Star Bank" TextColor="White" Grid.Column="1" FontSize="Large" Margin="20,35,0,20" />
+            </Grid>
+        </StackLayout>
+
+        <Border Grid.Row="1" Margin="30,0,30,0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12"/>
+            </Border.StrokeShape>
+            <StackLayout WidthRequest="300" VerticalOptions="Start" HorizontalOptions="Center" Margin="25,25" Padding="25,0">
+                <Border Margin="0,0,0,15" Padding="20,0,0,0" >
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <Entry Placeholder="Usuario" WidthRequest="250"/>
+                </Border>
+
+                <Border Padding="20,0,0,0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <Entry Placeholder="Contraseña" WidthRequest="250" IsPassword="True" />
+                </Border>
+                
+                <Label Text="¿Olvidó su usuario o contraseña?" TextColor="Blue" WidthRequest="250" Margin="10,10,10,30" />
+                <Button Text="Ingresar" WidthRequest="250"/>
+                <Label Text="¿Primera vez que ingresa?" TextColor="Black" WidthRequest="250" Margin="0,10,0,0" />
+                <Label Text="Regístrese aquí" TextColor="Blue" WidthRequest="250" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Border>
+
+        <Border Grid.Row="2" Margin="30,10,30,115">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12"/>
+            </Border.StrokeShape>
+            <Frame Grid.Row="2" Margin="30,10,30,110" CornerRadius="90" WidthRequest="130" HeightRequest="110" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Start" Padding="0,10,0,1">
+                <Image Source="facial.svg" WidthRequest="100" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Start" />
+            </Frame>
+        </Border>
+    </Grid>
+</ContentPage>

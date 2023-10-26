@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Final_project.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Final_project.Screens"
+    xmlns:local2="clr-namespace:Final_project"
+    Shell.FlyoutBehavior="Flyout">
+
+
+    <Shell.FlyoutHeader>
+        <Label Text="hOLA"></Label>
+    </Shell.FlyoutHeader>
+    
+    <FlyoutItem Title="Inicio" Icon="inicio.svg">
+        <ShellContent Title="Inicio" ContentTemplate="{DataTemplate local:Page_home}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Administrar" Icon="administrar.svg">
+        <ShellContent Title="Administracion de cuenta" ContentTemplate="{DataTemplate local:Page_account_manager}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Pagar servicios" Icon="pagar_servicios.svg">
+        <ShellContent Title="Pagar servicios" ContentTemplate="{DataTemplate local:Page_service_categories}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Transferencias" Icon="transferencia.svg">
+        <ShellContent Title="Inicio" ContentTemplate="{DataTemplate local:Page_transfer}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Finanzas" Icon="finanzas.svg">
+        <ShellContent Title="Finanzas" ContentTemplate="{DataTemplate local:Page_finance}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Configuracion" Icon="configuracion.svg">
+        <ShellContent Title="Configuracion" ContentTemplate="{DataTemplate local:Page_settings}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Cerrar sesion" Icon="cerrar_sesion.svg">
+        <ShellContent Title="Cerrar sesion" ContentTemplate="{DataTemplate local2:MainPage}" />
+    </FlyoutItem>
+</Shell>

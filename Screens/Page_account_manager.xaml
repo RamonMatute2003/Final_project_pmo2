@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             x:Class="Final_project.Screens.Page_account_manager">
+
+    <Grid HorizontalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="background.svg" Aspect="AspectFill" Grid.RowSpan="3"/>
+
+        <Border Grid.Row="0" Margin="10,10,10,0" WidthRequest="330" HeightRequest="150" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12"/>
+            </Border.StrokeShape>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Border Padding="5" StrokeThickness="0" Grid.Column="0" Background="#A2A2A2" Margin="10,10,10,0" WidthRequest="50" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="32"/>
+                            </Border.StrokeShape>
+                            <Image Source="cuenta.svg"></Image>
+                        </Border>
+                        <Label Grid.Column="1" Text="Cuenta personal Ramon Ariel Matute" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150"  Margin="0,5,0,5" />
+                    </Grid>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Margin="0,20,0,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Cuenta bancaria: 749108751" Grid.Column="0" FontAttributes="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start" WidthRequest="150" Margin="20,5,0,5" />
+                        <Label Text="L2,500.31" FontAttributes="Bold" Grid.Column="1" MaximumWidthRequest="300" Margin="30,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Margin="10,10,10,0" WidthRequest="330" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12"/>
+            </Border.StrokeShape>
+
+            <expander:SfExpander BackgroundColor="#AEB1FB" Margin="12">
+                <expander:SfExpander.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="48"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Text="Historial" Margin="9"></Label>
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Grid>
+                        <Label Text="Historial"></Label>
+                        <Label Text="Historial"></Label>
+                    </Grid>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
+        </Border>
+
+        <Border Grid.Row="2" Margin="10,10,10,0" WidthRequest="330" HeightRequest="150" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12"/>
+            </Border.StrokeShape>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <DatePicker Grid.Row="0" Format="yyyy-MM-dd" BackgroundColor="#AEB1FB" Margin="12"></DatePicker>
+                        <CollectionView Grid.Row="1" ItemsSource="{Binding Items}" Margin="12" BackgroundColor="#AEB1FB">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Padding="10" ColumnSpacing="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- Image -->
+                                        <Image Grid.RowSpan="2" Source="{Binding image}" WidthRequest="50" HeightRequest="50" Aspect="AspectFill"/>
+
+                                        <!-- Name -->
+                                        <Label Grid.Column="1" Text="{Binding name}" />
+
+                                        <!-- Money -->
+                                        <Label Grid.Column="2" Text="{Binding money}" HorizontalOptions="End"/>
+
+                                        <!-- Code -->
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding code}" />
+
+                                        <!-- Date -->
+                                        <Label Grid.Row="1" Grid.Column="2" Text="{Binding date}" HorizontalOptions="End"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>

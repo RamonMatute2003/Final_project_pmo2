@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_project.Screens.Page_services">
+
+    <Grid HorizontalOptions="Center">
+        <Image Source="background.svg" Aspect="AspectFill" Grid.RowSpan="9"/>
+        <ScrollView>
+            <StackLayout>
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <Label TextColor="#161FFF" HorizontalTextAlignment="Center" Margin="10,0,0,0" FontSize="18" Text="Categoria de servicios" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+                <CollectionView Grid.Row="1" ItemsSource="{Binding association}" Margin="12">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="40" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="12"/>
+                                </Border.StrokeShape>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="1" FontSize="18" Text="{Binding name}" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="10,5,5,5" />
+                                    <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

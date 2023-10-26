@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_project.Screens.Page_transfer_or_payment_result">
+
+    <Grid HorizontalOptions="Center">
+        <Image Source="background.svg" Aspect="AspectFill" Grid.RowSpan="9"/>
+        <ScrollView>
+            <StackLayout>
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <Label TextColor="#161FFF" HorizontalTextAlignment="Center" Margin="10,0,0,0" FontSize="18" Text="Resultado de pago de servicio" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="600" MaximumHeightRequest="330" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="4"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="4"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="4"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="4"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="4"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="4"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0" Text="Compartir" Margin="10,15,15,0"></Button>
+                        
+                        <Label Grid.Row="1" FontSize="18" Text="Cuenta origen" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="10,15,0,0"/>
+                        <Label Grid.Row="2" FontSize="18" Text="Ramon Ariel Matute Aguilar" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        <Label Grid.Row="3" FontSize="18" Text="#75221566" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        <Label Grid.Row="4" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
+                        <Label Grid.Row="5" FontSize="18" Text="Cuenta destino" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="10,20,0,0"/>
+                        <Label Grid.Row="6" FontSize="18" Text="Ramon Ariel Matute Aguilar" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        <Label Grid.Row="7" FontSize="18" Text="#75221566" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        <Label Grid.Row="8" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
+                        <Label Grid.Row="9" FontSize="18" Text="Descripcion: Pago del trabajo realizado el dia lunes" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                        <Label Grid.Row="10" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
+                        <Label Grid.Row="11" FontSize="18" Text="Fecha: 2023/10/12" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                        <Label Grid.Row="12" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
+                        <Label Grid.Row="13" FontSize="18" Text="Monto: L830.00" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                        <Label Grid.Row="14" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
+                        <Label Grid.Row="15" FontSize="18" Text="Tipo: pago servicio" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                        <Label Grid.Row="16" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
+                        <Label Grid.Row="17" FontSize="18" Text="N° comprobante: 565948" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                    </Grid>
+                </Border>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
