@@ -3,15 +3,13 @@ using System.Collections.ObjectModel;
 
 namespace Final_project.Screens;
 
-public partial class Page_services : ContentPage
-{
+public partial class Page_services:ContentPage {
     public ObservableCollection<Associations> association
     {
         get; set;
     }
 
-    public Page_services()
-	{
+    public Page_services() {
         InitializeComponent();
 
         association=new ObservableCollection<Associations>{

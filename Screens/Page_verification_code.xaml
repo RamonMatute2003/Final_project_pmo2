@@ -34,15 +34,15 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Entry Grid.Column="0" HorizontalTextAlignment="Center" Margin="25,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
-            <Entry Grid.Column="1" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
-            <Entry Grid.Column="2" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
-            <Entry Grid.Column="3" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
-            <Entry Grid.Column="4" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
-            <Entry Grid.Column="5" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry x:Name="txt_code1" MaxLength="1" TextChanged="on_text_changed" Grid.Column="0" HorizontalTextAlignment="Center" Margin="25,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry x:Name="txt_code2" MaxLength="1" TextChanged="on_text_changed" Grid.Column="1" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry x:Name="txt_code3" MaxLength="1" TextChanged="on_text_changed" Grid.Column="2" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry x:Name="txt_code4" MaxLength="1" TextChanged="on_text_changed" Grid.Column="3" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry x:Name="txt_code5" MaxLength="1" TextChanged="on_text_changed" Grid.Column="4" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
+            <Entry x:Name="txt_code6" MaxLength="1" TextChanged="on_text_changed" Grid.Column="5" HorizontalTextAlignment="Center" Margin="10,0,20,0" HorizontalOptions="Center" BackgroundColor="White" WidthRequest="30"/>
         </Grid>
 
-        <Label Text="Tiempo: 1:00" HorizontalOptions="Center" VerticalOptions="Start" TextColor="White" Grid.Row="3" Margin="20,190,10,0" />
-        <Button Grid.Row="4" HorizontalOptions="Center" VerticalOptions="Start" Text="Volver a enviar codigo" WidthRequest="250"/>
+        <Label Text="Tiempo: 1:00" x:Name="txt_time" HorizontalOptions="Center" VerticalOptions="Start" TextColor="White" Grid.Row="3" Margin="20,190,10,0" />
+        <Button Grid.Row="4" HorizontalOptions="Center" Clicked="send_again" VerticalOptions="Start" Text="Volver a enviar codigo" WidthRequest="250"/>
     </Grid>
 </ContentPage>

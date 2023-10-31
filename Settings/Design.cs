@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Final_project.Settings{
-    class Design{
-        public static void remove_stripe(){//remove_stripe=eliminar raya
+﻿namespace Final_project.Settings {
+    class Design {
+        public static void remove_stripe() {//remove_stripe=eliminar raya
             Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific.Entry),(handler,view) => {
-                #if ANDROID
-                    handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                #endif
+#if ANDROID
+                handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+#endif
             });
         }
     }

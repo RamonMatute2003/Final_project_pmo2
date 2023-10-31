@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Final_project.Models
-{
+﻿namespace Final_project.Models {
     public class Historic {
         public string image
         {

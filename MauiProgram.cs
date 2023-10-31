@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿
+using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Core.Hosting;
 
 namespace Final_project {
@@ -18,6 +19,7 @@ namespace Final_project {
 #endif
 
             return builder.Build();
+            
         }
     }
 }
