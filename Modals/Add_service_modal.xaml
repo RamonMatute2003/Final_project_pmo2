@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_project.Modals.Add_service_modal"
+             Title="Add_service_modal"
+             BackgroundColor="#80000000">
+    
+    <Border Margin="30,0,30,0" MaximumHeightRequest="300" VerticalOptions="Center" Padding="5">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="12"/>
+        </Border.StrokeShape>
+
+        <StackLayout Orientation="Vertical" Padding="15">
+            <Border>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Entry x:Name="txt_amount" MaxLength="100" Placeholder="Monto" Background="White"/>
+                </StackLayout>
+            </Border>
+
+            <Border>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Entry x:Name="txt_name_service" MaxLength="100" Placeholder="Nombre del servicio" Background="White"/>
+                </StackLayout>
+            </Border>
+
+            <Border>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Picker x:Name="pk_categories_services" Title="Elige una opción" SelectedIndexChanged="MiPicker_SelectedIndexChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Elige una categoria de servicio</x:String>
+                                <x:String>Asociaciones</x:String>
+                                <x:String>Automotrices</x:String>
+                                <x:String>Cuotas y creditos</x:String>
+                                <x:String>Instituciones educativas</x:String>
+                                <x:String>Funerarias</x:String>
+                                <x:String>Servicios publicos</x:String>
+                                <x:String>Telecomunicaciones</x:String>
+                                <x:String>Otros</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+            </Border>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="1" Text="Verificar" Clicked="verify" Margin="10,10,0,0" CornerRadius="10"/>
+                <Button Grid.Column="0" Text="Cancelar" Clicked="cancel_modal" BackgroundColor="#85020B" Margin="0,10,0,0" CornerRadius="10"/>
+            </Grid>
+
+        </StackLayout>
+    </Border>
+    
+</ContentPage>

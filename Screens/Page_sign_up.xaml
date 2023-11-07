@@ -34,14 +34,14 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12" />
                     </Border.StrokeShape>
-                    <Entry x:Name="txt_names"  Placeholder="Nombres" WidthRequest="250"/>
+                    <Entry x:Name="txt_names" MaxLength="100" Placeholder="Nombres" WidthRequest="250"/>
                 </Border>
 
                 <Border Padding="20,0,0,0" Margin="0,0,0,15">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry x:Name="txt_surnames" Placeholder="Apellidos" WidthRequest="250"/>
+                    <Entry x:Name="txt_surnames" MaxLength="100" Placeholder="Apellidos" WidthRequest="250"/>
                 </Border>
 
                 <Border Padding="20,0,0,0" Margin="0,0,0,15">
@@ -55,38 +55,24 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry x:Name="txt_dni" Placeholder="DNI" WidthRequest="250"/>
+                    <Entry x:Name="txt_dni" MaxLength="13" Placeholder="DNI" WidthRequest="250"/>
                 </Border>
 
                 <Border Padding="20,0,0,0" Margin="0,0,0,15">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry x:Name="txt_email" Placeholder="Correo electronico" WidthRequest="250"/>
+                    <Entry x:Name="txt_email" MaxLength="100" Placeholder="Correo electronico" WidthRequest="250"/>
                 </Border>
 
                 <Border Padding="20,0,0,0" Margin="0,0,0,15">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry x:Name="txt_password" Placeholder="Contraseña" WidthRequest="250" IsPassword="True" />
+                    <Entry x:Name="txt_password" MaxLength="100" Placeholder="Contraseña" WidthRequest="250" IsPassword="True" />
                 </Border>
 
                 <Button Text="Registrarse" Clicked="insert_user" WidthRequest="250"/>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-
-                    <Label Grid.Column="0" Text="¿Ya tienes una cuenta?" WidthRequest="170" Margin="0,5,3,0"/>
-                    <StackLayout Grid.Column="1">
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="link_sign_in" NumberOfTapsRequired="1" />
-                        </StackLayout.GestureRecognizers>
-                        <Label Text="Iniciar sesión" TextColor="Blue" WidthRequest="250" Margin="0,5,0,0"/>
-                    </StackLayout>
-                </Grid>
             </StackLayout>
         </Border>
     </Grid>

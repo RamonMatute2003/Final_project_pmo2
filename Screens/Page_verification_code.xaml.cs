@@ -1,3 +1,4 @@
+using Final_project.Modals;
 using Final_project.Rest_api;
 using Final_project.Settings;
 using System;
@@ -19,12 +20,17 @@ namespace Final_project.Screens {
             if(code==null){
                 code="";
                 await generate_code();
-                //StartTimer();
+                StartTimer();
+            }
+
+            if(Temporary_data.password=="exitoso") {
+                Temporary_data.password=null;
+                await Navigation.PopModalAsync();
             }
         }
 
         private async Task generate_code() {
-            Table_users users = new Table_users("","","","",Temporary_data.email,"","",0,"",0);
+            Table_users users = new Table_users("","","","",Temporary_data.email,"","",0,"",0,0);
             string response = "";
 
             var loadingModal = new Loading_modal();
@@ -43,7 +49,6 @@ namespace Final_project.Screens {
 
             foreach(var data in list) {
                 code=data.code;
-                Console.WriteLine("codigof: "+data.code);
                 break;
             }
         }
@@ -110,32 +115,33 @@ namespace Final_project.Screens {
             
             if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
                 if(isRunning){
-                    if(Temporary_data.page=="Page_sign_up") {
+                    if(Temporary_data.page=="Page_sign_up"){
                         await insert_user();
                     } else {
-                        if(Temporary_data.page=="MainPage") {
-                            await update_password();
+                        if(Temporary_data.page=="MainPage"){
+                            await Navigation.PushAsync(new Page_change_password());
+                        }else{
+                            if(Temporary_data.page=="Page_settings") {
+                                await Navigation.PushAsync(new Page_change_password());
+                            }
                         }
                     }
                 }else{
-                    await DisplayAlert("Advertencia","El tiempo se ha acabado, por favar dale a reenviar codigo","OK");
+                    await DisplayAlert("Advertencia","El tiempo se ha acabado, por favar dele a reenviar codigo","OK");
                 }
             }
-        }
-        
-        private Task update_password() {
-            throw new NotImplementedException();
+
         }
 
         private async Task insert_user() {
-            Table_users users = new Table_users(Temporary_data.names,Temporary_data.surnames,Temporary_data.date,Temporary_data.dni,Temporary_data.email,Temporary_data.password,Temporary_data.user,Temporary_data.amount,Temporary_data.account_number,0);
+            Table_users users = new Table_users(Temporary_data.names,Temporary_data.surnames,Temporary_data.date,Temporary_data.dni,Temporary_data.email,Temporary_data.password,Temporary_data.user,Temporary_data.amount,Temporary_data.account_number,0,0);
             string response = "";
             var loadingModal = new Loading_modal();
             await Navigation.PushModalAsync(loadingModal);
 
             try {
                 Methods insert = new Methods();
-                response=await Task.Run(() => insert.insert_async(users));
+                response=await Task.Run(() => insert.insert_update_async(users,Connection_bd.insert_user));
             } catch(Exception ex) {
                 await DisplayAlert("Advertencia",""+ex,"OK");
             }

@@ -1,3 +1,4 @@
+using Final_project.Modals;
 using Final_project.Rest_api;
 using Final_project.Settings;
 using System.Text.Json;
@@ -8,10 +9,6 @@ namespace Final_project.Screens {
             InitializeComponent();
 
             Design.remove_stripe();
-        }
-
-        private void link_sign_in(object sender,TappedEventArgs e) {
-            App.Current.MainPage=new MainPage();
         }
 
         private async void insert_user(object sender,EventArgs e) {
@@ -66,7 +63,7 @@ namespace Final_project.Screens {
         }
 
         private async Task<bool> repeated_email(){
-            Table_users users = new Table_users("","","","",txt_email.Text,"","",0,"",0);
+            Table_users users = new Table_users("","","","",txt_email.Text,"","",0,"",0,0);
             string response = "";
 
             var loadingModal = new Loading_modal();

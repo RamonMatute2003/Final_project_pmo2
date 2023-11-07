@@ -4,7 +4,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Final_project.Rest_api {
     public class Methods {
-        public async Task<string> insert_async(object data) {
+        public async Task<string> insert_update_async(object data, string url) {
             string response_insert = null;
 
             using(HttpClient client = new HttpClient()) {
@@ -26,7 +26,7 @@ namespace Final_project.Rest_api {
                     try {
                         var content = new StringContent(json,Encoding.UTF8,"application/json");
 
-                        var response = await client.PostAsync(Connection_bd.insert_user,content);
+                        var response = await client.PostAsync(url,content);
 
                         if(response.IsSuccessStatusCode) {
                             response_insert="exitoso";
@@ -59,6 +59,10 @@ namespace Final_project.Rest_api {
                         } else {
                             if(data is Table_services service) {
                                 json=JsonConvert.SerializeObject(service);
+                            }else{
+                                if(data is Table_join_data join_data) {
+                                    json=JsonConvert.SerializeObject(join_data);
+                                }
                             }
                         }
                     }
@@ -78,6 +82,5 @@ namespace Final_project.Rest_api {
 
             return json_response;
         }
-
     }
 }

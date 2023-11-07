@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_project.Modals.Pay_service_modal"
+             Title="Pay_service_modal"
+             BackgroundColor="#80000000">
+    
+    <Border Margin="30,0,30,0" MaximumHeightRequest="500" VerticalOptions="Center" Padding="5">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="12"/>
+        </Border.StrokeShape>
+
+        <StackLayout Orientation="Vertical" Padding="15">
+            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Text="Cuenta destino: " TextColor="Black" HorizontalOptions="Center" Margin="5"/>
+                <Label x:Name="lbl_account_name" Grid.Row="1" Text="#account name" TextColor="Black" HorizontalOptions="Center" Margin="5"/>
+                <Label Grid.Row="2" Text="Nombre servicio: " TextColor="Black" HorizontalOptions="Center" Margin="5"/>
+                <Label x:Name="lbl_service" Grid.Row="3" Text="service" TextColor="Black" HorizontalOptions="Center" Margin="5"/>
+                <Label Grid.Row="4" Text="Monto: " TextColor="Black" HorizontalOptions="Center" Margin="5"/>
+                <Label x:Name="lbl_amount" Grid.Row="5" Text="L200.00" TextColor="Black" HorizontalOptions="Center" Margin="5"/>
+
+                <Border Grid.Row="6">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <StackLayout Orientation="Vertical" Padding="10">
+                        <Entry x:Name="txt_description" MaxLength="100" Placeholder="Descripcion(opcional)" Background="White"/>
+                    </StackLayout>
+                </Border>
+
+                <Grid Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="1" Text="Pagar" Clicked="pay" Margin="10,10,0,0" CornerRadius="10"/>
+                    <Button Grid.Column="0" Text="Cancelar" Clicked="cancel_modal" BackgroundColor="#85020B" Margin="0,10,0,0" CornerRadius="10"/>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </Border>
+</ContentPage>

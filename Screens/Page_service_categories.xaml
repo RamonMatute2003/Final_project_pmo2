@@ -4,7 +4,7 @@
              x:Class="Final_project.Screens.Page_service_categories">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="anadir"></ToolbarItem>
+        <ToolbarItem IconImageSource="anadir" Clicked="add_service"></ToolbarItem>
     </ContentPage.ToolbarItems>
 
     <Grid HorizontalOptions="Center">
@@ -23,17 +23,44 @@
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="link_associations" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Image Source="asociaciones.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
-                        <Label Grid.Column="1" FontSize="18" Text="Asociaciones" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
-                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                    </Grid>
+                            <Image Source="asociaciones.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                            <Label Grid.Column="1" FontSize="18" Text="Asociaciones" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                            <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
+                </Border>
+
+                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="link_car" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="automovil.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                            <Label Grid.Column="1" FontSize="18" Text="Automotrices" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                            <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
                 </Border>
 
                 <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
@@ -41,17 +68,22 @@
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="link_fees_credits" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Image Source="automovil.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
-                        <Label Grid.Column="1" FontSize="18" Text="Automotrices" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
-                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                    </Grid>
+                            <Image Source="grafico.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                            <Label Grid.Column="1" FontSize="18" Text="Cuotas y creditos" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                            <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
                 </Border>
 
                 <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
@@ -59,17 +91,22 @@
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="link_educational_institutions" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Image Source="grafico.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
-                        <Label Grid.Column="1" FontSize="18" Text="Cuotas y creditos" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
-                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                    </Grid>
+                            <Image Source="educacion.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                            <Label Grid.Column="1" FontSize="18" Text="Instituciones educativas" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                            <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
                 </Border>
 
                 <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
@@ -77,17 +114,24 @@
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="link_funeral_homes" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Image Source="educacion.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
-                        <Label Grid.Column="1" FontSize="18" Text="Instituciones educativas" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
-                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                    </Grid>
+                            <Image Source="paloma.png" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                            <Label Grid.Column="1" FontSize="18" Text="Funerarias" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                            <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
+
+                    
                 </Border>
 
                 <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
@@ -95,17 +139,22 @@
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="link_public_services" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Image Source="paloma.png" HeightRequest="50" Margin="10" Grid.Column="0"/>
-                        <Label Grid.Column="1" FontSize="18" Text="Funerarias" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
-                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                    </Grid>
+                            <Image Source="foco.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                            <Label Grid.Column="1" FontSize="18" Text="Servicios publicos" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                            <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
                 </Border>
 
                 <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
@@ -113,35 +162,24 @@
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="link_wifi" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Image Source="foco.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
-                        <Label Grid.Column="1" FontSize="18" Text="Servicios publicos" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
-                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                    </Grid>
-                </Border>
+                            <Image Source="wifi.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                            <Label Grid.Column="1" FontSize="18" Text="Telecomunicaciones" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="0,5,0,5" />
+                            <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
 
-                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="12"/>
-                    </Border.StrokeShape>
-
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Image Source="wifi.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
-                        <Label Grid.Column="1" FontSize="18" Text="Telecomunicaciones" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="0,5,0,5" />
-                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                    </Grid>
+                    
                 </Border>
 
                 <Border Margin="10,10,10,20" WidthRequest="330" HeightRequest="80" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
@@ -149,17 +187,22 @@
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="link_others" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Image Source="otros.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
-                        <Label Grid.Column="1" FontSize="18" Text="Otros" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
-                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                    </Grid>
+                            <Image Source="otros.svg" HeightRequest="50" Margin="10" Grid.Column="0"/>
+                            <Label Grid.Column="1" FontSize="18" Text="Otros" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="0,5,0,5" />
+                            <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
                 </Border>
             </StackLayout>
         </ScrollView>

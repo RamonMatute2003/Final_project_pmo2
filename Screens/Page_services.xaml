@@ -13,7 +13,7 @@
                     </Border.StrokeShape>
                     <Label TextColor="#161FFF" HorizontalTextAlignment="Center" Margin="10,0,0,0" FontSize="18" Text="Categoria de servicios" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Border>
-                <CollectionView Grid.Row="1" ItemsSource="{Binding association}" Margin="12">
+                <CollectionView Grid.Row="1" ItemsSource="{Binding services}" Margin="12">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="40" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
@@ -21,16 +21,24 @@
                                     <RoundRectangle CornerRadius="12"/>
                                 </Border.StrokeShape>
 
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
+                                <StackLayout>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="action" NumberOfTapsRequired="1"/>
+                                    </StackLayout.GestureRecognizers>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
 
-                                    <Label Grid.Column="1" FontSize="18" Text="{Binding name}" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="10,5,5,5" />
-                                    <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                                </Grid>
+                                        <Label Grid.Column="0" IsVisible="false" StyleId="lbl_id_service" Text="{Binding id_service}"/>
+                                        <Label Grid.Column="1" IsVisible="false" StyleId="lbl_amount" Text="{Binding amount}"/>
+                                        <Label Grid.Column="2" FontSize="18" StyleId="lbl_service" Text="{Binding service}" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="10,5,5,5" />
+                                        <Image Grid.Column="3" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                                    </Grid>
+                                </StackLayout>
                             </Border>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

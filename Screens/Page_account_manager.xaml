@@ -37,7 +37,7 @@
                             </Border.StrokeShape>
                             <Image Source="cuenta.svg"></Image>
                         </Border>
-                        <Label Grid.Column="1" Text="Cuenta personal Ramon Ariel Matute" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150"  Margin="0,5,0,5" />
+                        <Label Grid.Column="1" x:Name="lbl_name" Text="Cuenta personal Ramon Ariel Matute" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150"  Margin="0,5,0,5" />
                     </Grid>
 
                 </StackLayout>
@@ -49,8 +49,8 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
-                        <Label Text="Cuenta bancaria: 749108751" Grid.Column="0" FontAttributes="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start" WidthRequest="150" Margin="20,5,0,5" />
-                        <Label Text="L2,500.31" FontAttributes="Bold" Grid.Column="1" MaximumWidthRequest="300" Margin="30,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                        <Label Text="Cuenta bancaria: 749108751" x:Name="lbl_account_number" Grid.Column="0" FontAttributes="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start" WidthRequest="150" Margin="20,5,0,5" />
+                        <Label Text="L2,500.31" FontAttributes="Bold" x:Name="lbl_amount" Grid.Column="1" MaximumWidthRequest="300" Margin="30,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
                     </Grid>
                 </StackLayout>
             </Grid>

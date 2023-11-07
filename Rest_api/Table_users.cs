@@ -1,7 +1,7 @@
 ﻿namespace Final_project.Rest_api {
     public class Table_users {
 
-        public Table_users(string names,string surnames,string birthdate,string dni,string email,string password,string user,double amount,string account_number,int acces) {
+        public Table_users(string names,string surnames,string birthdate,string dni,string email,string password,string user,double amount,string account_number,int access,int id_user) {
             this.names=names;
             this.surnames=surnames;
             this.birthdate=birthdate;
@@ -11,11 +11,17 @@
             this.user=user;
             this.amount=amount;
             this.account_number=account_number;
-            this.acces=acces;
+            this.access=access;
+            this.id_user=id_user;
         }
 
-        public Table_users() {
+        public Table_users(){
 
+        }
+
+        public int id_user
+        {
+            get; set;
         }
 
         public string names
@@ -55,7 +61,7 @@
         {
             get; set;
         }
-        public int acces
+        public int access
         {
             get; set;
         }

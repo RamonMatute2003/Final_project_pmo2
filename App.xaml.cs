@@ -5,8 +5,7 @@ namespace Final_project {
         public App() {
             InitializeComponent();
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mjc3NjI0M0AzMjMzMmUzMDJlMzBsVFQ2bGYwYzBIeUp0ajhHNkowOFUyZFVCaUFhU01RZENjb0VFcGlESk5JPQ==");
-            MainPage=new NavigationPage(new Page_sign_up());
-
+            MainPage=new NavigationPage(new MainPage());
         }
     }
 }

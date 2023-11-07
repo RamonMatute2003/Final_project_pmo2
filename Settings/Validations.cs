@@ -37,7 +37,7 @@ namespace Final_project.Settings {
         }
 
         public static bool validate_user(string text) {
-            var user = new Regex(@"^(?![-_. ])(?!.*[_. -]{2})[a-zA-Z0-9._ -]{3,20}(?<![_.- ])$");
+            var user = new Regex(@"^(?![-_. ])(?!.*[_. -]{2})[a-zA-Z0-9._ -]{3,20}(?<![_. ])$");
 
             return user.IsMatch(text);
         }

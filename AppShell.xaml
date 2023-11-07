@@ -4,39 +4,44 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Final_project.Screens"
-    xmlns:local2="clr-namespace:Final_project"
-    Shell.FlyoutBehavior="Flyout">
-
+    xmlns:local2="clr-namespace:Final_project.Settings"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.NavBarHasShadow="false"
+    Shell.FlyoutWidth="220">
 
     <Shell.FlyoutHeader>
-        <Label Text="hOLA"></Label>
+        <Image Source="cerrar.svg" WidthRequest="30" HorizontalOptions="End" VerticalOptions="End">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnCloseMenuTapped"/>
+            </Image.GestureRecognizers>
+        </Image>
     </Shell.FlyoutHeader>
-    
-    <FlyoutItem Title="Inicio" Icon="inicio.svg">
+
+    <FlyoutItem Title="Inicio" Icon="inicio.svg" Route="Page_home">
         <ShellContent Title="Inicio" ContentTemplate="{DataTemplate local:Page_home}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Administrar" Icon="administrar.svg">
+    <FlyoutItem Title="Administrar" Icon="administrar.svg" Route="Page_account_manager">
         <ShellContent Title="Administracion de cuenta" ContentTemplate="{DataTemplate local:Page_account_manager}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Pagar servicios" Icon="pagar_servicios.svg">
+    <FlyoutItem Title="Pagar servicios" Icon="pagar_servicios.svg" Route="Page_service_categories">
         <ShellContent Title="Pagar servicios" ContentTemplate="{DataTemplate local:Page_service_categories}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Transferencias" Icon="transferencia.svg">
+    <FlyoutItem Title="Transferencias" Icon="transferencia.svg" Route="Page_transfer">
         <ShellContent Title="Inicio" ContentTemplate="{DataTemplate local:Page_transfer}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Finanzas" Icon="finanzas.svg">
+    <FlyoutItem Title="Finanzas" Icon="finanzas.svg" Route="Page_finance">
         <ShellContent Title="Finanzas" ContentTemplate="{DataTemplate local:Page_finance}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Configuracion" Icon="configuracion.svg">
+    <FlyoutItem Title="Configuracion" Icon="configuracion.svg" Route="Page_settings">
         <ShellContent Title="Configuracion" ContentTemplate="{DataTemplate local:Page_settings}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Cerrar sesion" Icon="cerrar_sesion.svg">
-        <ShellContent Title="Cerrar sesion" ContentTemplate="{DataTemplate local2:MainPage}" />
+    <FlyoutItem Title="Cerrar sesion" Icon="cerrar_sesion.svg" Route="MainPage">
+        <ShellContent Title="Cerrar sesion" ContentTemplate="{DataTemplate local2:Logout_page}" />
     </FlyoutItem>
 </Shell>

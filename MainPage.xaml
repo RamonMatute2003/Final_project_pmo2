@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Final_project.MainPage"
-             Title="Iniciar sesion"
-             >
+             Title="Iniciar sesion">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -34,24 +33,35 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry Placeholder="Usuario" WidthRequest="250"/>
+                    <Entry Placeholder="Usuario" MaxLength="100" x:Name="txt_user" WidthRequest="250"/>
                 </Border>
 
                 <Border Padding="20,0,0,0">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry Placeholder="Contraseña" WidthRequest="250" IsPassword="True" />
+                    <Entry Placeholder="Contraseña" x:Name="txt_password" MaxLength="100" WidthRequest="250" IsPassword="True" />
                 </Border>
-                
-                <Label Text="¿Olvidó su usuario o contraseña?" TextColor="Blue" WidthRequest="250" Margin="10,10,10,30" />
-                <Button Text="Ingresar" WidthRequest="250"/>
+
+                <StackLayout>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="link_recover_password" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="¿Olvidó su usuario o contraseña?" TextColor="Blue" WidthRequest="250" Margin="10,10,10,30" />
+                </StackLayout>
+               
+                <Button Text="Ingresar" WidthRequest="250" Clicked="get_into"/>
                 <Label Text="¿Primera vez que ingresa?" TextColor="Black" WidthRequest="250" Margin="0,10,0,0" />
-                <Label Text="Regístrese aquí" TextColor="Blue" WidthRequest="250" HorizontalOptions="Center"/>
+                <StackLayout>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="link_sign_up" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Regístrese aquí" TextColor="Blue" WidthRequest="250" HorizontalOptions="Center"/>
+                </StackLayout>
             </StackLayout>
         </Border>
 
-        <Border Grid.Row="2" Margin="30,10,30,115">
+        <Border Grid.Row="2" HeightRequest="130" Margin="30,10,30,115">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="12"/>
             </Border.StrokeShape>

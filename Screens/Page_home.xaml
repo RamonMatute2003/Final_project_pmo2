@@ -22,8 +22,8 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Label Text="Cuenta bancaria: 749108751" HorizontalOptions="Center" HorizontalTextAlignment="End" VerticalOptions="Center" WidthRequest="150" Grid.Column="0" Margin="20,5,0,5" />
-                <Label Text="L2,500.31" Grid.Column="1" MaximumWidthRequest="300" Margin="30,5,0,0" HorizontalOptions="Center" HorizontalTextAlignment="End" VerticalOptions="Center"/>
+                <Label x:Name="lbl_name" Text="Cuenta bancaria: 749108751" HorizontalOptions="Center" HorizontalTextAlignment="End" VerticalOptions="Center" WidthRequest="150" Grid.Column="0" Margin="0,5,0,5" />
+                <Label x:Name="lbl_amount" Text="L2,500.31" Grid.Column="1" MaximumWidthRequest="300" Margin="30,5,0,0" HorizontalOptions="Center" HorizontalTextAlignment="End" VerticalOptions="Center"/>
             </Grid>
         </Border>
 
@@ -41,33 +41,48 @@
 
             <StackLayout HeightRequest="150" WidthRequest="150" Margin="10" Grid.Row="0" Grid.Column="0" BackgroundColor="white">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="example" NumberOfTapsRequired="1" />
+                    <TapGestureRecognizer Tapped="page_account_manager" NumberOfTapsRequired="1" />
                 </StackLayout.GestureRecognizers>
                 <Image Source="administrar.svg" HeightRequest="120" WidthRequest="100"></Image>
                 <Label Text="Administrar" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"></Label>
             </StackLayout>
 
             <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="white" Margin="10" HeightRequest="150" WidthRequest="150">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="page_service_categories" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
                 <Image Source="pagar_servicios.svg" HeightRequest="120" WidthRequest="100"></Image>
                 <Label Text="Pagar servicios" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"></Label>
             </StackLayout>
 
             <StackLayout Grid.Row="2" Grid.Column="0" BackgroundColor="white" Margin="10" HeightRequest="150" WidthRequest="150">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="page_settings" NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
                 <Image Source="configuracion.svg" HeightRequest="120" WidthRequest="100"></Image>
                 <Label Text="Configuración" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"></Label>
             </StackLayout>
 
             <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="white" Margin="10" HeightRequest="150" WidthRequest="150">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="page_transfer" NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
                 <Image Source="transferencia.svg" HeightRequest="120" WidthRequest="100"></Image>
                 <Label Text="Transferencias" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"></Label>
             </StackLayout>
 
             <StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="white" Margin="10" HeightRequest="150" WidthRequest="150">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="page_finance" NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
                 <Image Source="finanzas.svg" HeightRequest="120" WidthRequest="100"></Image>
                 <Label Text="Finanzas" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"></Label>
             </StackLayout>
 
             <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="white" Margin="10" HeightRequest="150" WidthRequest="150">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="page_main_page" NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
                 <Image Source="cerrar_sesion.svg" HeightRequest="120" WidthRequest="100"></Image>
                 <Label Text="Cerrar sesión" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"></Label>
             </StackLayout>
