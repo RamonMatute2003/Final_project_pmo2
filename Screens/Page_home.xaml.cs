@@ -1,8 +1,34 @@
+using Final_project.Rest_api;
 using Final_project.Settings;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Globalization;
+using System.Text.Json;
+
+/* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-maccatalyst)'
+Antes:
 using Final_project.Rest_api;
 using System.Text.Json;
+Después:
+using System.Text.Json;
+using static System.Text.Json;
+*/
+
+/* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-ios)'
+Antes:
+using Final_project.Rest_api;
+using System.Text.Json;
+Después:
+using System.Text.Json;
+using static System.Text.Json;
+*/
+
+/* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-windows10.0.19041.0)'
+Antes:
+using Final_project.Rest_api;
+using System.Text.Json;
+Después:
+using System.Text.Json;
+using static System.Text.Json;
+*/
 
 namespace Final_project.Screens;
 
@@ -54,7 +80,7 @@ public partial class Page_home:ContentPage {
     }
 
     private void page_main_page(object sender,EventArgs e) {
-        App.Current.MainPage = new MainPage();
+        App.Current.MainPage=new MainPage();
     }
 
     private async void page_finance(object sender,EventArgs e) {

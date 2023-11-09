@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Final_project.Rest_api{
-    internal class Table_join_data{
+﻿namespace Final_project.Rest_api {
+    public class Table_join_data {
         public int id_sender_user
         {
             get; set;
@@ -17,6 +11,11 @@ namespace Final_project.Rest_api{
         }
 
         public int id_type
+        {
+            get; set;
+        }
+
+        public string type
         {
             get; set;
         }

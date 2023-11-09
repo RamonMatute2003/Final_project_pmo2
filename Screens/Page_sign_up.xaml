@@ -55,14 +55,14 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry x:Name="txt_dni" MaxLength="13" Placeholder="DNI" WidthRequest="250"/>
+                    <Entry x:Name="txt_dni" Keyboard="Numeric" MaxLength="13" Placeholder="DNI" WidthRequest="250"/>
                 </Border>
 
                 <Border Padding="20,0,0,0" Margin="0,0,0,15">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry x:Name="txt_email" MaxLength="100" Placeholder="Correo electronico" WidthRequest="250"/>
+                    <Entry x:Name="txt_email" MaxLength="100" Keyboard="Email" Placeholder="Correo electronico" WidthRequest="250"/>
                 </Border>
 
                 <Border Padding="20,0,0,0" Margin="0,0,0,15">

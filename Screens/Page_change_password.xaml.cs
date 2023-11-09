@@ -36,9 +36,9 @@ namespace Final_project.Screens {
 
         private async void validate_field(object sender,EventArgs e) {
 
-            if(string.IsNullOrEmpty(txt_new_password.Text) || string.IsNullOrEmpty(txt_repeat_password.Text)){
+            if(string.IsNullOrEmpty(txt_new_password.Text)||string.IsNullOrEmpty(txt_repeat_password.Text)) {
                 await DisplayAlert("Advertencia","No dejar campos vacios","OK");
-            } else{
+            } else {
                 if(Validations.validate_password(txt_new_password.Text)) {
                     if(Validations.validate_password(txt_repeat_password.Text)) {
                         if(txt_new_password.Text==txt_repeat_password.Text) {
@@ -52,7 +52,7 @@ namespace Final_project.Screens {
                 } else {
                     await DisplayAlert("Advertencia","Revisa la contraseña, esta mal escrita","OK");
                 }
-            } 
-        } 
+            }
+        }
     }
 }

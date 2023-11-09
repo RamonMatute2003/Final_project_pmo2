@@ -3,9 +3,7 @@ using Final_project.Models;
 using Final_project.Rest_api;
 using Final_project.Settings;
 using System.Collections.ObjectModel;
-using System.Globalization;
 using System.Text.Json;
-using System.Xml.Linq;
 
 namespace Final_project.Screens {
     public partial class Page_services:ContentPage {
@@ -52,13 +50,13 @@ namespace Final_project.Screens {
 
                 if(services_bd==null) {
                     await DisplayAlert("Advertencia","No hay datos","OK");
-                } else{
+                } else {
                     foreach(var data in services_bd) {
                         services.Add(data);
                     }
                 }
 
-                
+
             } catch(Exception ex) {
                 await DisplayAlert("Advertencia","error: "+ex.ToString(),"OK");
             }
@@ -82,7 +80,7 @@ namespace Final_project.Screens {
 
             List<Associations> list = JsonSerializer.Deserialize<List<Associations>>(response);
 
-            if(list.Count>0){
+            if(list.Count>0) {
                 return list;
             }
 
@@ -92,7 +90,7 @@ namespace Final_project.Screens {
         private async void action(object sender,TappedEventArgs e) {
             var stackLayout = (StackLayout) sender;
 
-            var item=(Associations) stackLayout.BindingContext;
+            var item = (Associations) stackLayout.BindingContext;
 
             if(item!=null) {
                 Temporary_data.id_service=item.id_service;
@@ -100,9 +98,9 @@ namespace Final_project.Screens {
                 Temporary_data.service=item.service;
                 Temporary_data.id_receiving_user=item.id_user;
 
-                if(Temporary_data.id_receiving_user==Temporary_data.id_sender_user){
+                if(Temporary_data.id_receiving_user==Temporary_data.id_sender_user) {
                     await DisplayAlert("Advertencia","Este servicio es tuyo, no puedes pagarlo","OK");
-                } else{
+                } else {
                     await Navigation.PushModalAsync(new Pay_service_modal());
                 }
             }

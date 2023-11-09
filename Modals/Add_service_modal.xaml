@@ -16,7 +16,7 @@
                     <RoundRectangle CornerRadius="12"/>
                 </Border.StrokeShape>
                 <StackLayout Orientation="Vertical" Padding="10">
-                    <Entry x:Name="txt_amount" MaxLength="100" Placeholder="Monto" Background="White"/>
+                    <Entry x:Name="txt_amount" Keyboard="Numeric" MaxLength="100" Placeholder="Monto" Background="White"/>
                 </StackLayout>
             </Border>
 
@@ -58,10 +58,9 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="1" Text="Verificar" Clicked="verify" Margin="10,10,0,0" CornerRadius="10"/>
+                <Button Grid.Column="1" Text="Añadir" Clicked="verify" Margin="10,10,0,0" CornerRadius="10"/>
                 <Button Grid.Column="0" Text="Cancelar" Clicked="cancel_modal" BackgroundColor="#85020B" Margin="0,10,0,0" CornerRadius="10"/>
             </Grid>
-
         </StackLayout>
     </Border>
     

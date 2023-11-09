@@ -1,12 +1,11 @@
 using Final_project.Modals;
 using Final_project.Rest_api;
 using Final_project.Settings;
-using System;
 using System.Text.Json;
 
 namespace Final_project.Screens {
     public partial class Page_verification_code:ContentPage {
-        string code=null;
+        string code = null;
         private bool isRunning = false;
         private CancellationTokenSource cts;
 
@@ -17,7 +16,7 @@ namespace Final_project.Screens {
         protected override async void OnAppearing() {
             base.OnAppearing();
 
-            if(code==null){
+            if(code==null) {
                 code="";
                 await generate_code();
                 StartTimer();
@@ -64,12 +63,12 @@ namespace Final_project.Screens {
         }
 
         private void move_to_next_entry(Entry currentEntry) {
-            if(currentEntry==txt_code1){
+            if(currentEntry==txt_code1) {
                 txt_code2.Focus();
-            }else{
+            } else {
                 if(currentEntry==txt_code2) {
                     txt_code3.Focus();
-                }else{
+                } else {
                     if(currentEntry==txt_code3) {
                         txt_code4.Focus();
                     } else {
@@ -81,19 +80,19 @@ namespace Final_project.Screens {
                             }
                         }
                     }
-                }    
+                }
             }
 
             verification_code();
         }
 
         private void move_to_previous_entry(Entry currentEntry) {
-            if(currentEntry==txt_code2){
+            if(currentEntry==txt_code2) {
                 txt_code1.Focus();
-            }else{
-                if(currentEntry==txt_code3){
+            } else {
+                if(currentEntry==txt_code3) {
                     txt_code2.Focus();
-                }else{
+                } else {
                     if(currentEntry==txt_code4) {
                         txt_code3.Focus();
                     } else {
@@ -111,22 +110,55 @@ namespace Final_project.Screens {
             verification_code();
         }
 
-        private async void verification_code(){
-            
-            if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
-                if(isRunning){
-                    if(Temporary_data.page=="Page_sign_up"){
+
+        /* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-maccatalyst)'
+        Antes:
+                private async void verification_code(){
+
+                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
+        Después:
+                private async void verification_code(){
+
+                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
+        */
+
+        /* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-ios)'
+        Antes:
+                private async void verification_code(){
+
+                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
+        Después:
+                private async void verification_code(){
+
+                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
+        */
+
+        /* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-windows10.0.19041.0)'
+        Antes:
+                private async void verification_code(){
+
+                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
+        Después:
+                private async void verification_code(){
+
+                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
+        */
+        private async void verification_code() {
+
+            if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text) {
+                if(isRunning) {
+                    if(Temporary_data.page=="Page_sign_up") {
                         await insert_user();
                     } else {
-                        if(Temporary_data.page=="MainPage"){
+                        if(Temporary_data.page=="MainPage") {
                             await Navigation.PushAsync(new Page_change_password());
-                        }else{
+                        } else {
                             if(Temporary_data.page=="Page_settings") {
                                 await Navigation.PushAsync(new Page_change_password());
                             }
                         }
                     }
-                }else{
+                } else {
                     await DisplayAlert("Advertencia","El tiempo se ha acabado, por favar dele a reenviar codigo","OK");
                 }
             }
@@ -158,15 +190,14 @@ namespace Final_project.Screens {
 
         private async void send_again(object sender,EventArgs e) {
             if(!isRunning) {
-                StartTimer(); 
+                StartTimer();
                 await generate_code();
             } else {
                 await DisplayAlert("Advertencia","Espera a que se acabe el tiempo para volver a enviar el codigo","OK");
             }
         }
 
-        private async void StartTimer()
-        {
+        private async void StartTimer() {
             cts=new CancellationTokenSource();
             isRunning=true;
 
@@ -175,7 +206,7 @@ namespace Final_project.Screens {
                 int totalSeconds = (2*60*500)/1000;
                 for(int i = 0;i<totalSeconds;i++) {
                     UpdateTextTime(totalSeconds-i);
-                    await Task.Delay(1000,cts.Token); 
+                    await Task.Delay(1000,cts.Token);
                 }
 
                 UpdateTextTime(0);
@@ -184,12 +215,11 @@ namespace Final_project.Screens {
             }
         }
 
-        private void UpdateTextTime(int secondsElapsed)
-        {
+        private void UpdateTextTime(int secondsElapsed) {
             int minutes = secondsElapsed/60;
             int seconds = secondsElapsed%60;
             string timeString = string.Format("{0:D2}:{1:D2}",minutes,seconds);
-            txt_time.Text=timeString; 
+            txt_time.Text=timeString;
         }
     }
 }

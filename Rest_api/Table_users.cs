@@ -15,7 +15,7 @@
             this.id_user=id_user;
         }
 
-        public Table_users(){
+        public Table_users() {
 
         }
 

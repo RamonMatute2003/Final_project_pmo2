@@ -1,3 +1,4 @@
+using Final_project.Modals;
 using Final_project.Models;
 using Final_project.Rest_api;
 using Final_project.Settings;
@@ -7,7 +8,11 @@ using System.Text.Json;
 
 namespace Final_project.Screens {
     public partial class Page_account_manager:ContentPage {
-        public ObservableCollection<Historic> Items
+        public ObservableCollection<Table_join_data> Items{
+            get; set;
+        }
+
+        public ObservableCollection<Table_join_data> records
         {
             get; set;
         }
@@ -15,10 +20,10 @@ namespace Final_project.Screens {
         public Page_account_manager() {
             InitializeComponent();
 
-            Items=new ObservableCollection<Historic>{
-            new Historic { image = "listo.svg", name = "Nombre 1", money = "$100", code = "345", date = "2032/12/11" },
-            };
-
+            records=new ObservableCollection<Table_join_data>();
+            Items=new ObservableCollection<Table_join_data>();
+            load_records();
+            load_record_date();
             this.BindingContext=this;
         }
 
@@ -26,10 +31,96 @@ namespace Final_project.Screens {
             base.OnAppearing();
 
             await select_user();
+            
             lbl_name.Text="Cuenta personal "+Temporary_data.names+" "+Temporary_data.surnames;
             lbl_account_number.Text="Cuenta bancaria: "+Temporary_data.account_number;
             string formatoMoneda = Temporary_data.amount.ToString("C",CultureInfo.CreateSpecificCulture("es-HN"));
             lbl_amount.Text=formatoMoneda;
+        }
+
+        private async Task load_records(){
+            try {
+                var services_bd = await get_data_records();
+
+                if(services_bd!=null) {
+                    foreach(var data in services_bd) {
+                        records.Add(data);
+                    }
+                }
+
+            } catch(Exception ex) {
+                await DisplayAlert("Advertencia","error: "+ex.ToString(),"OK");
+            }
+        }
+
+        private async Task load_record_date() {
+            try {
+                var services_bd = await get_date_records();
+
+                if(services_bd!=null) {
+                    foreach(var data in services_bd) {
+                        Items.Add(data);
+                    }
+                }
+                
+            } catch(Exception ex) {
+                await DisplayAlert("Advertencia","error: "+ex.ToString(),"OK");
+            }
+        }
+
+        private async Task<List<Table_join_data>> get_data_records() {
+            Table_users data = new Table_users("","","","","","","",0,"",0,Temporary_data.id_sender_user);
+            string response = "";
+
+            var loadingModal = new Loading_modal();
+            await Navigation.PushModalAsync(loadingModal);
+
+            try {
+                Methods insert = new Methods();
+                response=await Task.Run(() => insert.select_async(data,Connection_bd.select_records_data));
+            } catch(Exception ex) {
+                await DisplayAlert("Advertencia",""+ex,"OK");
+            }
+
+            await Navigation.PopModalAsync();
+
+
+            if(response!=""&&response!=null) {
+                List<Table_join_data> list = JsonSerializer.Deserialize<List<Table_join_data>>(response);
+
+                if(list.Count>0) {
+                    return list;
+                }
+            }
+            
+            return null;
+        }
+
+        private async Task<List<Table_join_data>> get_date_records(){
+            Table_records data = new Table_records(Temporary_data.id_sender_user,0,0,"",dp_date.Date.Year+"-"+dp_date.Date.Month+"-"+dp_date.Date.Day,"",0);
+            string response = "";
+
+            var loadingModal = new Loading_modal();
+            await Navigation.PushModalAsync(loadingModal);
+
+            try{
+                Methods insert=new Methods();
+                response=await Task.Run(() => insert.select_async(data,Connection_bd.select_records_date));
+            }catch(Exception ex){
+                await DisplayAlert("Advertencia",""+ex,"OK");
+            }
+
+            await Navigation.PopModalAsync();
+            Console.WriteLine(response);
+            if(response!="" && response!=null){
+                List<Table_join_data> list = JsonSerializer.Deserialize<List<Table_join_data>>(response);
+                
+                if(list.Count>0) {
+                    return list;
+                }
+            }
+
+            return null;
         }
 
         private async Task select_user() {
@@ -51,6 +142,11 @@ namespace Final_project.Screens {
                 Temporary_data.surnames=list[0].surnames;
                 Temporary_data.account_number=list[0].account_number;
             }
+        }
+
+        private async void dp_date_DateSelected(object sender,DateChangedEventArgs e){
+            Items.Clear();
+            await load_record_date();
         }
     }
 }

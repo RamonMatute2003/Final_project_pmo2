@@ -1,6 +1,4 @@
-﻿using System.Windows.Input;
-
-namespace Final_project{
+﻿namespace Final_project {
     public partial class AppShell:Shell {
         public AppShell() {
             InitializeComponent();

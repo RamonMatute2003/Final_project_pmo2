@@ -15,7 +15,7 @@
                     <RoundRectangle CornerRadius="12"/>
                 </Border.StrokeShape>
                 <StackLayout Orientation="Vertical" Padding="10">
-                    <Entry x:Name="txt_email" MaxLength="100" Placeholder="Correo electronico" Background="White"/>
+                    <Entry x:Name="txt_email" Keyboard="Email" MaxLength="100" Placeholder="Correo electronico" Background="White"/>
                 </StackLayout>
             </Border>
 

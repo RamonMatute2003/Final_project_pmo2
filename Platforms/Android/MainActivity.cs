@@ -4,8 +4,8 @@ using Android.Content.PM;
 namespace Final_project {
     [Activity(Theme = "@style/Maui.SplashTheme",MainLauncher = true,ConfigurationChanges = ConfigChanges.ScreenSize|ConfigChanges.Orientation|ConfigChanges.UiMode|ConfigChanges.ScreenLayout|ConfigChanges.SmallestScreenSize|ConfigChanges.Density)]
     public class MainActivity:MauiAppCompatActivity {
-        public void a(){
-            
+        public void a() {
+
         }
     }
 

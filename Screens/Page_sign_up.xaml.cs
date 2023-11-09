@@ -21,7 +21,7 @@ namespace Final_project.Screens {
                             if(Validations.validate_dni(txt_dni.Text)) {
                                 if(Validations.validate_email(txt_email.Text)) {
                                     if(Validations.validate_password(txt_password.Text)) {
-                                        if(await repeated_email()){
+                                        if(await repeated_email()) {
                                             Temporary_data.page="Page_sign_up";
                                             Temporary_data.names=txt_names.Text;
                                             Temporary_data.surnames=txt_surnames.Text;
@@ -62,7 +62,7 @@ namespace Final_project.Screens {
             return dp_birthdate.Date.Year+"-"+dp_birthdate.Date.Month+"-"+dp_birthdate.Date.Day;
         }
 
-        private async Task<bool> repeated_email(){
+        private async Task<bool> repeated_email() {
             Table_users users = new Table_users("","","","",txt_email.Text,"","",0,"",0,0);
             string response = "";
 

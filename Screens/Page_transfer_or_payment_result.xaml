@@ -41,25 +41,26 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <Button Grid.Row="0" Text="Compartir" Margin="10,15,15,0"></Button>
+                        <Button Grid.Row="0" Text="Compartir" Clicked="capture_image" Margin="10,15,15,0"></Button>
                         
                         <Label Grid.Row="1" FontSize="18" Text="Cuenta origen" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="10,15,0,0"/>
-                        <Label Grid.Row="2" FontSize="18" Text="Ramon Ariel Matute Aguilar" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
-                        <Label Grid.Row="3" FontSize="18" Text="#75221566" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        <Label x:Name="lbl_name_send" Grid.Row="2" FontSize="18" Text="Ramon Ariel Matute Aguilar" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        <Label x:Name="lbl_account_number_send" Grid.Row="3" FontSize="18" Text="#75221566" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
                         <Label Grid.Row="4" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
                         <Label Grid.Row="5" FontSize="18" Text="Cuenta destino" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="10,20,0,0"/>
-                        <Label Grid.Row="6" FontSize="18" Text="Ramon Ariel Matute Aguilar" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
-                        <Label Grid.Row="7" FontSize="18" Text="#75221566" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        <Label x:Name="lbl_name_receiving" Grid.Row="6" FontSize="18" Text="Ramon Ariel Matute Aguilar" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        <Label x:Name="lbl_account_number_receiving" Grid.Row="7" FontSize="18" Text="#75221566" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
                         <Label Grid.Row="8" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
-                        <Label Grid.Row="9" FontSize="18" Text="Descripcion: Pago del trabajo realizado el dia lunes" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                        <Label x:Name="lbl_description" Grid.Row="9" FontSize="18" Text="Descripcion: Pago del trabajo realizado el dia lunes" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
                         <Label Grid.Row="10" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
-                        <Label Grid.Row="11" FontSize="18" Text="Fecha: 2023/10/12" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                        <Label x:Name="lbl_date" Grid.Row="11" FontSize="18" Text="Fecha: 2023/10/12" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
                         <Label Grid.Row="12" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
-                        <Label Grid.Row="13" FontSize="18" Text="Monto: L830.00" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                        <Label x:Name="lbl_amount" Grid.Row="13" FontSize="18" Text="Monto: L830.00" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
                         <Label Grid.Row="14" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
-                        <Label Grid.Row="15" FontSize="18" Text="Tipo: pago servicio" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                        <Label x:Name="lbl_type" Grid.Row="15" FontSize="18" Text="Tipo: pago servicio" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
                         <Label Grid.Row="16" FontSize="18" BackgroundColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="300" Margin="10,0,0,0"/>
-                        <Label Grid.Row="17" FontSize="18" Text="N° comprobante: 565948" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                        <Label x:Name="lbl_code" Grid.Row="17" FontSize="18" Text="N° comprobante: 565948" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,20,0,0"/>
+                        <Button Grid.Row="18" Clicked="cancel_modal" Text="Salir" Margin="10,15,15,0"></Button>
                     </Grid>
                 </Border>
             </StackLayout>

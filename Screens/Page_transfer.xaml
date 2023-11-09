@@ -21,24 +21,24 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry Placeholder="Cuenta destino" WidthRequest="250"/>
+                    <Entry Placeholder="Cuenta destino" x:Name="txt_account_number" Keyboard="Numeric" WidthRequest="250"/>
                 </Border>
 
                 <Border Padding="20,0,0,0" Margin="0,0,0,15">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry Placeholder="Monto" WidthRequest="250"/>
+                    <Entry Placeholder="Monto" x:Name="txt_amount" Keyboard="Numeric" WidthRequest="250"/>
                 </Border>
 
                 <Border Padding="20,0,0,0" >
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Entry Placeholder="Descripcion" WidthRequest="250"/>
+                    <Entry Placeholder="Descripcion (opcional)" x:Name="txt_description" WidthRequest="250"/>
                 </Border>
 
-                <Button Text="Verificar" WidthRequest="250" Margin="0,20,0,0"/>
+                <Button Text="Verificar" Clicked="verification" WidthRequest="250" Margin="0,20,0,0"/>
             </StackLayout>
         </Border>
     </Grid>

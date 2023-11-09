@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Final_project.Rest_api {
     public class Methods {
-        public async Task<string> insert_update_async(object data, string url) {
+        public async Task<string> insert_update_async(object data,string url) {
             string response_insert = null;
 
             using(HttpClient client = new HttpClient()) {
@@ -45,7 +44,7 @@ namespace Final_project.Rest_api {
             return response_insert;
         }
 
-        public async Task<string> select_async(object data, string url) {
+        public async Task<string> select_async(object data,string url) {
             string json_response = "";
             string json = "";
 
@@ -59,7 +58,7 @@ namespace Final_project.Rest_api {
                         } else {
                             if(data is Table_services service) {
                                 json=JsonConvert.SerializeObject(service);
-                            }else{
+                            } else {
                                 if(data is Table_join_data join_data) {
                                     json=JsonConvert.SerializeObject(join_data);
                                 }

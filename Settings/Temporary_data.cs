@@ -1,10 +1,11 @@
 ﻿namespace Final_project.Settings {
     public class Temporary_data {
-        public Temporary_data(){
-            
+        public Temporary_data() {
+
         }
 
-        public static string page{
+        public static string page
+        {
             get; set;
         }
 
@@ -40,6 +41,12 @@
         {
             get; set;
         }
+
+        public static double pay_amount
+        {
+            get; set;
+        }
+
         public static string account_number
         {
             get; set;
@@ -75,6 +82,11 @@
         }
 
         public string code
+        {
+            get; set;
+        }
+
+        public static string code_record
         {
             get; set;
         }

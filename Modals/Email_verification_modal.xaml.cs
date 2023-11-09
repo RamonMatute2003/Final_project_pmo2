@@ -1,25 +1,51 @@
-using Final_project.Settings;
+using Final_project.Rest_api;
 using Final_project.Screens;
+
+/* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-maccatalyst)'
+Antes:
 using Microsoft.Maui;
 using Final_project.Rest_api;
+Después:
+using Final_project.Settings;
+using Microsoft.Maui;
+*/
+
+/* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-ios)'
+Antes:
+using Microsoft.Maui;
+using Final_project.Rest_api;
+Después:
+using Final_project.Settings;
+using Microsoft.Maui;
+*/
+
+/* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-windows10.0.19041.0)'
+Antes:
+using Microsoft.Maui;
+using Final_project.Rest_api;
+Después:
+using Final_project.Settings;
+using Microsoft.Maui;
+*/
+using Final_project.Settings;
 using System.Text.Json;
 
-namespace Final_project.Modals{
-    public partial class Email_verification_modal : ContentPage{
-	    public Email_verification_modal(){
-		    InitializeComponent();
-	    }
+namespace Final_project.Modals {
+    public partial class Email_verification_modal:ContentPage {
+        public Email_verification_modal() {
+            InitializeComponent();
+        }
 
         private async void cancel_modal(object sender,EventArgs e) {
             await Navigation.PopModalAsync();
         }
 
-        private async void verify(object sender,EventArgs e){
+        private async void verify(object sender,EventArgs e) {
 
-            if(string.IsNullOrEmpty(txt_email.Text)){
+            if(string.IsNullOrEmpty(txt_email.Text)) {
                 await DisplayAlert("Advertencia","No dejar campos vacios","OK");
-            }else{
-                if(Validations.validate_email(txt_email.Text)){
+            } else {
+                if(Validations.validate_email(txt_email.Text)) {
                     if(await email_exists()) {
                         Temporary_data.email=txt_email.Text;
                         Temporary_data.page="MainPage";
@@ -36,7 +62,7 @@ namespace Final_project.Modals{
                         page.Title="";
 
                         await Navigation.PushModalAsync(new NavigationPage(page));
-                    } else{
+                    } else {
                         await DisplayAlert("Advertencia","Usuario no encontrado con ese correo","OK");
                     }
 

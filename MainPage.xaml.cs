@@ -14,13 +14,13 @@ namespace Final_project {
         }
 
         private async void get_into(object sender,EventArgs e) {
-            if(!(string.IsNullOrEmpty(txt_user.Text) || string.IsNullOrEmpty(txt_password.Text))) {
+            if(!(string.IsNullOrEmpty(txt_user.Text)||string.IsNullOrEmpty(txt_password.Text))) {
                 if(Validations.validate_user(txt_user.Text)) {
                     if(Validations.validate_password(txt_password.Text)) {
                         if(await select_user()) {
-                            if(Temporary_data.access==1){
+                            if(Temporary_data.access==1) {
                                 App.Current.MainPage=new AppShell();
-                            }else{
+                            } else {
                                 await DisplayAlert("Advertencia","Sin acceso, espere a que se revise su cuenta","OK");
                             }
                         } else {
@@ -32,7 +32,7 @@ namespace Final_project {
                 } else {
                     await DisplayAlert("Advertencia","Revisa bien tu correo electronico que ingresaste","OK");
                 }
-            }else{
+            } else {
                 await DisplayAlert("Advertencia","No dejar campos vacios","OK");
             }
         }
@@ -53,9 +53,9 @@ namespace Final_project {
 
             await Navigation.PopModalAsync();
 
-            List<Table_users> list=JsonSerializer.Deserialize<List<Table_users>>(response);
+            List<Table_users> list = JsonSerializer.Deserialize<List<Table_users>>(response);
 
-            if(list.Count>0){
+            if(list.Count>0) {
                 Temporary_data.user=list[0].user;
                 Temporary_data.names=list[0].names;
                 Temporary_data.surnames=list[0].surnames;

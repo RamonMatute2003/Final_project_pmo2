@@ -9,6 +9,11 @@
         public const string select_user = url_bd+"/select_user.php";
         public const string select_services = url_bd+"/select_services.php";
         public const string select_data_payment = url_bd+"/select_data_payment.php";
+        public const string select_validate_user = url_bd+"/select_validate_user.php";
+        public const string select_user_record = url_bd+"/select_user_record.php";
+        public const string select_record = url_bd+"/select_record.php";
+        public const string select_records_data = url_bd+"/select_records_data.php";
+        public const string select_records_date = url_bd+"/select_records_date.php";
 
         public const string send_code = url_bd+"/send_code.php";
 
