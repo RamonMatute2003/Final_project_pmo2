@@ -27,6 +27,8 @@ public partial class Page_finance:ContentPage {
 
     protected override async void OnAppearing(){
         base.OnAppearing();
+        expense_chart.Clear();
+        income_chart.Clear();
         await load_record_date();
         await load_record_date1();
     }
