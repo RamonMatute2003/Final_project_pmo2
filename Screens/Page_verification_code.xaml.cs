@@ -23,17 +23,57 @@ namespace Final_project.Screens {
             }
 
             if(Temporary_data.password=="exitoso") {
-                Temporary_data.password=null;
+                await validate_user();
                 await Navigation.PopModalAsync();
             }
         }
 
-        private async Task generate_code() {
-            Table_users users = new Table_users("","","","",Temporary_data.email,"","",0,"",0,0);
+        private async Task<bool> validate_user() {
+            Table_users users = new Table_users("","","","","","","",0,Temporary_data.account_number,0,0);
             string response = "";
 
-            var loadingModal = new Loading_modal();
-            await Navigation.PushModalAsync(loadingModal);
+            try {
+                Methods insert = new Methods();
+                response=await Task.Run(() => insert.select_async(users,Connection_bd.select_validate_user));
+            } catch(Exception ex) {
+                await DisplayAlert("Advertencia",""+ex,"OK");
+            }
+
+            List<Table_users> list = JsonSerializer.Deserialize<List<Table_users>>(response);
+
+            if(list.Count>0) {
+                Temporary_data.account_number=list[0].account_number;
+                Temporary_data.id_sender_user=list[0].id_user;
+                Temporary_data.names=list[0].names;
+                Temporary_data.birthdate=list[0].birthdate;
+                Temporary_data.email=list[0].email;
+                Temporary_data.user=list[0].user;
+                Temporary_data.amount=list[0].amount;
+                Temporary_data.surnames=list[0].surnames;
+                Temporary_data.password=list[0].password;
+                Temporary_data.amount=list[0].amount;
+                Temporary_data.id_receiving_user=list[0].id_user;
+                return true;
+            }
+
+            return false;
+        }
+
+        private async Task generate_code() {
+
+            Table_users users = new Table_users("","","","",Temporary_data.email,"","",0,"",0,0);
+
+            if(Temporary_data.page=="Page_settings_email") {
+                users=new Table_users("","","","",Temporary_data.email2,"","",0,"",0,0);
+            }
+
+            string response = "";
+
+            if(Temporary_data.page!="Page_settings_email") {
+                var loadingModal = new Loading_modal();
+                await Navigation.PushModalAsync(loadingModal);
+            }
+            
 
             try {
                 Methods insert = new Methods();
@@ -42,7 +82,9 @@ namespace Final_project.Screens {
                 await DisplayAlert("Advertencia",""+ex,"OK");
             }
 
-            await Navigation.PopModalAsync();
+            if(Temporary_data.page!="Page_settings_email") {
+                await Navigation.PopModalAsync();
+            }
 
             List<Temporary_data> list = JsonSerializer.Deserialize<List<Temporary_data>>(response);
 
@@ -110,39 +152,6 @@ namespace Final_project.Screens {
             verification_code();
         }
 
-
-        /* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-maccatalyst)'
-        Antes:
-                private async void verification_code(){
-
-                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
-        Después:
-                private async void verification_code(){
-
-                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
-        */
-
-        /* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-ios)'
-        Antes:
-                private async void verification_code(){
-
-                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
-        Después:
-                private async void verification_code(){
-
-                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
-        */
-
-        /* Cambio no fusionado mediante combinación del proyecto 'Final_project (net7.0-windows10.0.19041.0)'
-        Antes:
-                private async void verification_code(){
-
-                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
-        Después:
-                private async void verification_code(){
-
-                    if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text){
-        */
         private async void verification_code() {
 
             if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text) {
@@ -155,6 +164,11 @@ namespace Final_project.Screens {
                         } else {
                             if(Temporary_data.page=="Page_settings") {
                                 await Navigation.PushAsync(new Page_change_password());
+                            }else{
+                                if(Temporary_data.page=="Page_settings_email") {
+                                    await change_email();
+                                    await DisplayAlert("Advertencia","Correo electronico cambaido con exito","OK");
+                                }
                             }
                         }
                     }
@@ -162,7 +176,31 @@ namespace Final_project.Screens {
                     await DisplayAlert("Advertencia","El tiempo se ha acabado, por favar dele a reenviar codigo","OK");
                 }
             }
+        }
 
+        private async Task change_email() {
+
+            Table_users users = new Table_users("","","","",Temporary_data.email2,"",Temporary_data.user,0,"",0,0);
+            string response = "";
+            var loadingModal = new Loading_modal();
+            await Navigation.PushModalAsync(loadingModal);
+
+            try {
+                Methods insert = new Methods();
+                response=await Task.Run(() => insert.insert_update_async(users,Connection_bd.update_email));
+            } catch(Exception ex) {
+                await DisplayAlert("Advertencia",""+ex,"OK");
+            }
+
+            await Navigation.PopModalAsync();
+
+            if(response=="exitoso") {
+                await DisplayAlert("Exitoso","Tu email se ha cambiado exitosamente","OK");
+                Temporary_data.email=Temporary_data.email2;
+                await Navigation.PushAsync(new AppShell());
+            } else {
+                await DisplayAlert("Advertencia","No se modifico contraseña: "+response,"OK");
+            }
         }
 
         private async Task insert_user() {

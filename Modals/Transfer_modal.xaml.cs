@@ -53,18 +53,8 @@ public partial class Transfer_modal:ContentPage {
             if(await insert_record()&&await change_amount()) {
                 await DisplayAlert("Exitoso","Transferencia realizada con exito","OK");
                 await change_amount_user();
-                Page_transfer_or_payment_result page = new Page_transfer_or_payment_result();
 
-                page.ToolbarItems.Add(new ToolbarItem {
-                    Text="Regresar",
-                    Command=new Command(async () => await Navigation.PopModalAsync()),
-                    Order=ToolbarItemOrder.Primary,
-                    Priority=0
-                });
-
-                page.Title="";
-
-                await Navigation.PushModalAsync(new NavigationPage(page));
+                await Navigation.PushModalAsync(new Page_transfer_or_payment_result());
 
             } else {
                 await DisplayAlert("Alerta","Transferencia erroneo","OK");

@@ -12,28 +12,21 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Label Grid.Column="1" FontSize="18" Text="Ramón Ariel Matute Aguilar" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
+                    <Label x:Name="txt_names" Grid.Column="1" FontSize="18" Text="Ramón Ariel Matute Aguilar" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
                 </Border>
 
                 <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Label Grid.Column="1" FontSize="18" Text="200317205510035" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
+                    <Label Grid.Column="1"  x:Name="txt_account_number" FontSize="18" Text="200317205510035" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
                 </Border>
 
                 <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Label Grid.Column="1" FontSize="18" Text="2023/10/12" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
-                </Border>
-
-                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="12"/>
-                    </Border.StrokeShape>
-                    <Label Grid.Column="1" FontSize="18" Text="Ramón Ariel Matute Aguilar" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
+                    <Label Grid.Column="1"  x:Name="txt_date" FontSize="18" Text="2023/10/10" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
                 </Border>
 
                 <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
@@ -41,38 +34,28 @@
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout Margin="0,-6,0,0">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="change_email" NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Label Grid.Column="1" FontSize="18" Text="ramonmatute2003@gmail.com" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
-                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                    </Grid>
+                            <Label Grid.Column="1" FontSize="18"  x:Name="txt_email" Text="ranmatute2003@gmail.com" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
+                            <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
+                    
                 </Border>
 
                 <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
-                    <Label Grid.Column="1" FontSize="18" Text="2023/10/12" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
-                </Border>
-
-                <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="12"/>
-                    </Border.StrokeShape>
-
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Label Grid.Column="1" FontSize="18" Text="********" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
-                        <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
-                    </Grid>
+                    <Label Grid.Column="1"  x:Name="txt_user" FontSize="18" Text="ramtute" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
                 </Border>
 
                 <Border Margin="10,10,10,0" WidthRequest="330" HeightRequest="50" MaximumHeightRequest="300" VerticalOptions="Start" HorizontalOptions="Center">
@@ -80,17 +63,21 @@
                         <RoundRectangle CornerRadius="12"/>
                     </Border.StrokeShape>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout Margin="0,-6,0,0">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="change_password" NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Label Grid.Column="0" FontSize="18" Text="ramonmatute2003@gmail.com" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
-                        <StackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                            <Switch IsToggled="True"/>
-                        </StackLayout>
-                    </Grid>
+                            <Label Grid.Column="1" FontSize="18" x:Name="txt_password" Text="********" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,5,0,5" />
+                            <Image Grid.Column="2" Source="flecha_derecha.svg" Margin="5" HorizontalOptions="End" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
+
                 </Border>
             </StackLayout>
         </ScrollView>

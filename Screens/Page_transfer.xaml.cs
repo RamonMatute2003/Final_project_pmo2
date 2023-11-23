@@ -12,6 +12,16 @@ public partial class Page_transfer:ContentPage {
         Design.remove_stripe();
     }
 
+    protected override async void OnAppearing() {
+        base.OnAppearing();
+
+        if(Temporary_data.code_record==null){
+            txt_account_number.Text="";
+            txt_amount.Text="";
+            txt_description.Text="";
+        }
+    }
+
     private async void verification(object sender,EventArgs e) {
         if(!(string.IsNullOrEmpty(txt_account_number.Text)||string.IsNullOrEmpty(txt_amount.Text))) {
             if(Validations.validate_account_number(txt_account_number.Text)) {

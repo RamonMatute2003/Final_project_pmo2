@@ -49,7 +49,7 @@
                     </StackLayout.GestureRecognizers>
                     <Label Text="¿Olvidó su usuario o contraseña?" TextColor="Blue" WidthRequest="250" Margin="10,10,10,30" />
                 </StackLayout>
-               
+
                 <Button Text="Ingresar" WidthRequest="250" Clicked="get_into"/>
                 <Label Text="¿Primera vez que ingresa?" TextColor="Black" WidthRequest="250" Margin="0,10,0,0" />
                 <StackLayout>
@@ -59,15 +59,6 @@
                     <Label Text="Regístrese aquí" TextColor="Blue" WidthRequest="250" HorizontalOptions="Center"/>
                 </StackLayout>
             </StackLayout>
-        </Border>
-
-        <Border Grid.Row="2" HeightRequest="130" Margin="30,10,30,115">
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="12"/>
-            </Border.StrokeShape>
-            <Frame Grid.Row="2" Margin="30,10,30,110" CornerRadius="90" WidthRequest="130" HeightRequest="110" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Start" Padding="0,10,0,1">
-                <Image Source="facial.svg" WidthRequest="100" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Start" />
-            </Frame>
         </Border>
     </Grid>
 </ContentPage>

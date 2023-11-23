@@ -29,6 +29,8 @@ namespace Final_project.Screens {
                 await DisplayAlert("Exitoso","Tu contraseña se ha cambiado exitosamente","OK");
                 Temporary_data.password=response;
                 await Navigation.PopAsync();
+                await Navigation.PopModalAsync();
+                await Navigation.PopModalAsync();
             } else {
                 await DisplayAlert("Advertencia","No se modifico contraseña: "+response,"OK");
             }

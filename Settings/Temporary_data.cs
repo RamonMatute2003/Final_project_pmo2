@@ -29,6 +29,12 @@
         {
             get; set;
         }
+
+        public static string email2
+        {
+            get; set;
+        }
+
         public static string password
         {
             get; set;

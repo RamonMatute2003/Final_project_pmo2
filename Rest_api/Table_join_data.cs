@@ -25,6 +25,11 @@
             get; set;
         }
 
+        public string amount_format
+        {
+            get; set;
+        }
+
         public double pay_amount
         {
             get; set;

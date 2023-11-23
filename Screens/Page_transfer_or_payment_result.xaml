@@ -41,8 +41,6 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <Button Grid.Row="0" Text="Compartir" Clicked="capture_image" Margin="10,15,15,0"></Button>
-                        
                         <Label Grid.Row="1" FontSize="18" Text="Cuenta origen" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" WidthRequest="150" Margin="10,15,0,0"/>
                         <Label x:Name="lbl_name_send" Grid.Row="2" FontSize="18" Text="Ramon Ariel Matute Aguilar" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>
                         <Label x:Name="lbl_account_number_send" Grid.Row="3" FontSize="18" Text="#75221566" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"/>

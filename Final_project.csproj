@@ -54,6 +54,7 @@
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="PdfSharpCore" Version="1.3.62" />
 		<PackageReference Include="PdfSharpCore.Charting" Version="1.3.62" />
+		<PackageReference Include="Syncfusion.Maui.Charts" Version="23.1.44" />
 		<PackageReference Include="Syncfusion.Maui.Expander" Version="23.1.42" />
 		<PackageReference Include="System.Net.Http" Version="4.3.4" />
 	</ItemGroup>
@@ -68,7 +69,13 @@
 	  <MauiXaml Update="Modals\Add_service_modal.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Modals\Change_email_modal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Modals\Email_verification_modal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Modals\Password_verification_modal.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Modals\Pay_service_modal.xaml">

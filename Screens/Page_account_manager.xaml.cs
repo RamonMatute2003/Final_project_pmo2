@@ -22,14 +22,14 @@ namespace Final_project.Screens {
 
             records=new ObservableCollection<Table_join_data>();
             Items=new ObservableCollection<Table_join_data>();
-            load_records();
-            load_record_date();
+            
             this.BindingContext=this;
         }
 
         protected override async void OnAppearing() {
             base.OnAppearing();
-
+            await load_records();
+            await load_record_date();
             await select_user();
             
             lbl_name.Text="Cuenta personal "+Temporary_data.names+" "+Temporary_data.surnames;
@@ -72,18 +72,12 @@ namespace Final_project.Screens {
             Table_users data = new Table_users("","","","","","","",0,"",0,Temporary_data.id_sender_user);
             string response = "";
 
-            var loadingModal = new Loading_modal();
-            await Navigation.PushModalAsync(loadingModal);
-
             try {
                 Methods insert = new Methods();
                 response=await Task.Run(() => insert.select_async(data,Connection_bd.select_records_data));
             } catch(Exception ex) {
                 await DisplayAlert("Advertencia",""+ex,"OK");
             }
-
-            await Navigation.PopModalAsync();
-
 
             if(response!=""&&response!=null) {
                 List<Table_join_data> list = JsonSerializer.Deserialize<List<Table_join_data>>(response);
@@ -101,7 +95,6 @@ namespace Final_project.Screens {
             string response = "";
 
             var loadingModal = new Loading_modal();
-            await Navigation.PushModalAsync(loadingModal);
 
             try{
                 Methods insert=new Methods();
@@ -110,8 +103,6 @@ namespace Final_project.Screens {
                 await DisplayAlert("Advertencia",""+ex,"OK");
             }
 
-            await Navigation.PopModalAsync();
-            Console.WriteLine(response);
             if(response!="" && response!=null){
                 List<Table_join_data> list = JsonSerializer.Deserialize<List<Table_join_data>>(response);
                 

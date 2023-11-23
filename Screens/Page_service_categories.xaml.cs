@@ -11,9 +11,9 @@ public partial class Page_service_categories:ContentPage {
     protected override async void OnAppearing() {
         base.OnAppearing();
 
-        if(Temporary_data.code_record!=null&&Temporary_data.code_record!="") {
+        /*if(Temporary_data.code_record!=null && Temporary_data.code_record!=""){
             await Navigation.PushAsync(new Page_transfer_or_payment_result());
-        }
+        }*/
     }
 
     private void link_associations(object sender,TappedEventArgs e) {
