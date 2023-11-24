@@ -40,6 +40,7 @@
 
         <chart:SfCartesianChart Margin="0,60,0,0">
 
+            
             <chart:ColumnSeries ItemsSource="{Binding income_chart}"
                     ShowDataLabels="True"
                     XBindingPath="service_category"
