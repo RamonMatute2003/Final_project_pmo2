@@ -3,7 +3,6 @@ using Final_project.Rest_api;
 using Final_project.Settings;
 using System.Collections.ObjectModel;
 using System.Text.Json;
-using static Android.Icu.Text.AlphabeticIndex;
 
 namespace Final_project.Screens;
 

@@ -16,8 +16,9 @@
         public const string select_records_date = url_bd+"/select_records_date.php";
         public const string select_expense_chart = url_bd+"/select_expense_chart.php";
         public const string select_income_chart = url_bd+"/select_income_chart.php";
-        public const string send_receipt = url_bd+"/send_receipt.php";
 
+        public const string send_receipt = url_bd+"/send_receipt.php";
+        public const string send_email_verification = url_bd+"/send_email_verification.php";
         public const string send_code = url_bd+"/send_code.php";
 
         public const string update_password = url_bd+"/update_password.php";

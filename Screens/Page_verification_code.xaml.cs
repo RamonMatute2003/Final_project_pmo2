@@ -152,12 +152,27 @@ namespace Final_project.Screens {
             verification_code();
         }
 
+        private async Task generate_request_user() {
+            await validate_user();
+            Table_users users = new Table_users(Temporary_data.names+" "+Temporary_data.surnames,"",Temporary_data.birthdate,Temporary_data.dni,Temporary_data.email,"",Temporary_data.user,0,"",0,0);
+
+            string response = "";
+
+            try {
+                Methods insert = new Methods();
+                response=await Task.Run(() => insert.select_async(users,Connection_bd.send_email_verification));
+            } catch(Exception ex) {
+                await DisplayAlert("Advertencia",""+ex,"OK");
+            }
+        }
+
         private async void verification_code() {
 
             if(code==txt_code1.Text+txt_code2.Text+txt_code3.Text+txt_code4.Text+txt_code5.Text+txt_code6.Text) {
                 if(isRunning) {
                     if(Temporary_data.page=="Page_sign_up") {
                         await insert_user();
+                        await generate_request_user();
                     } else {
                         if(Temporary_data.page=="MainPage") {
                             await Navigation.PushAsync(new Page_change_password());
@@ -172,6 +187,8 @@ namespace Final_project.Screens {
                             }
                         }
                     }
+
+
                 } else {
                     await DisplayAlert("Advertencia","El tiempo se ha acabado, por favar dele a reenviar codigo","OK");
                 }

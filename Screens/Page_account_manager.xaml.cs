@@ -5,7 +5,6 @@ using Final_project.Settings;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Text.Json;
-using static Android.Icu.Text.AlphabeticIndex;
 
 namespace Final_project.Screens {
     public partial class Page_account_manager:ContentPage {
