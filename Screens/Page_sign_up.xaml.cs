@@ -49,11 +49,11 @@ namespace Final_project.Screens {
                         } else {
                             await DisplayAlert("Advertencia","Revisa bien tu fecha de nacimiento, se permiite solo personas que hallan nacido en 2010 o antes","OK");
                         }
-                    } else {
-                        await DisplayAlert("Advertencia","Revisa bien tus apellidos que ingresaste","OK");
+                    }else{
+                        await DisplayAlert("Advertencia","Apellidos inválido. Por favor, introduce un apellido que tenga al menos 3 caracteres y esté compuesto solo por letras. Se permiten un espacio entre apellidos adicionales. Ejemplo: Matute Aguilar","OK");
                     }
-                } else {
-                    await DisplayAlert("Advertencia","Revisa bien tus nombres que ingresaste","OK");
+                }else{
+                    await DisplayAlert("Advertencia","Nombre inválido. Por favor, introduce un nombre que tenga al menos 3 caracteres y esté compuesto solo por letras. Se permiten un espacio entre nombres adicionales. Ejemplo: Juan Ramón Ariel","OK");
                 }
             }
         }

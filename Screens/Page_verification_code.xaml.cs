@@ -236,7 +236,7 @@ namespace Final_project.Screens {
             await Navigation.PopModalAsync();
 
             if(response=="exitoso") {
-                await DisplayAlert("Exitoso","Tu cuenta se ha creado exitosamente, debes esperar unas minutos o horas para darte acceso","OK");
+                await DisplayAlert("Exitoso","Tu cuenta se ha creado exitosamente, debes esperar unos minutos o horas para darte acceso, por favor estar atento a tu correo electronico","OK");
                 App.Current.MainPage=new MainPage();
             } else {
                 await DisplayAlert("Advertencia","No se inserto usuario: "+response,"OK");

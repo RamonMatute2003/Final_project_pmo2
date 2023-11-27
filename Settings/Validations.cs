@@ -55,7 +55,7 @@ namespace Final_project.Settings {
         }
 
         public static bool validate_description_service(string text) {
-            var description_service = new Regex(@"^[a-zA-Z0-9\s,.\-()!?:;'""áéíóúÁÉÍÓÚñÑ]+$");
+            var description_service=new Regex(@"^[a-zA-Z0-9\s,.\-()!?:;'""áéíóúÁÉÍÓÚñÑ]+$");
 
             return description_service.IsMatch(text);
         }
