@@ -51,8 +51,15 @@ namespace Final_project.Screens {
                     } else {
                         await DisplayAlert("Advertencia","Revisa la contraseña repetida, esta mal escrita","OK");
                     }
-                } else {
-                    await DisplayAlert("Advertencia","Revisa la contraseña, esta mal escrita","OK");
+                } 
+                else 
+                {
+                    await DisplayAlert("Advertencia", "La contraseña debe cumplir con los siguientes requisitos:\n\n" +
+                                            "- Al menos una letra minúscula.\n" +
+                                            "- Al menos una letra mayúscula.\n" +
+                                            "- Al menos un número.\n" +
+                                            "- Al menos un carácter especial \n\t(@$!%*?&#^+=()_-).\n" +
+                                            "- Longitud mínima de 8 caracteres.\n", "OK");
                 }
             }
         }

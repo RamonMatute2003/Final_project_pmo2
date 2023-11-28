@@ -15,19 +15,19 @@ namespace Final_project.Screens {
             if(empty()) {
                 await DisplayAlert("Advertencia","No dejar campos vacios","OK");
             } else {
-                if(Validations.validate_name(txt_names.Text)) {
-                    if(Validations.validate_surname(txt_surnames.Text)) {
+                if(Validations.validate_name(txt_names.Text.Trim())) {
+                    if(Validations.validate_surname(txt_surnames.Text.Trim())) {
                         if(!Validations.validation_birthdate(dp_birthdate.Date.Year)) {
                             if(Validations.validate_dni(txt_dni.Text)) {
-                                if(Validations.validate_email(txt_email.Text)) {
+                                if(Validations.validate_email(txt_email.Text.Trim())) {
                                     if(Validations.validate_password(txt_password.Text)) {
                                         if(await repeated_email()) {
                                             Temporary_data.page="Page_sign_up";
-                                            Temporary_data.names=txt_names.Text;
-                                            Temporary_data.surnames=txt_surnames.Text;
+                                            Temporary_data.names=txt_names.Text.Trim();
+                                            Temporary_data.surnames=txt_surnames.Text.Trim();
                                             Temporary_data.date=get_date();
                                             Temporary_data.dni=txt_dni.Text;
-                                            Temporary_data.email=txt_email.Text;
+                                            Temporary_data.email=txt_email.Text.Trim();
                                             Temporary_data.password=txt_password.Text;
                                             Temporary_data.user=generate_user();
                                             Temporary_data.amount=2000;
@@ -38,22 +38,27 @@ namespace Final_project.Screens {
                                             await DisplayAlert("Advertencia","Este correo ya esta en uso","OK");
                                         }
                                     } else {
-                                        await DisplayAlert("Advertencia","Revisa bien tu contraseña que ingresaste","OK");
+                                        await DisplayAlert("Advertencia", "La contraseña debe cumplir con los siguientes requisitos:\n\n" +
+                                            "- Al menos una letra minúscula.\n" +
+                                            "- Al menos una letra mayúscula.\n" +
+                                            "- Al menos un número.\n" +
+                                            "- Al menos un carácter especial \n\t(@$!%*?&#^+=()_-).\n" +
+                                            "- Longitud mínima de 8 caracteres.\n", "OK");
                                     }
                                 } else {
                                     await DisplayAlert("Advertencia","Revisa bien tu correo electronico que ingresaste","OK");
                                 }
                             } else {
-                                await DisplayAlert("Advertencia","Revisa bien tu dni que ingresaste","OK");
+                                await DisplayAlert("Advertencia","La longitud de tu DNI debe de ser de 13 caracteres","OK");
                             }
                         } else {
                             await DisplayAlert("Advertencia","Revisa bien tu fecha de nacimiento, se permiite solo personas que hallan nacido en 2010 o antes","OK");
                         }
                     }else{
-                        await DisplayAlert("Advertencia","Apellidos inválido. Por favor, introduce un apellido que tenga al menos 3 caracteres y esté compuesto solo por letras. Se permiten un espacio entre apellidos adicionales. Ejemplo: Matute Aguilar","OK");
+                        await DisplayAlert("Advertencia","Apellidos inválido. Por favor, introduce un apellido que tenga al menos 3 caracteres y esté compuesto solo por letras.","OK");
                     }
                 }else{
-                    await DisplayAlert("Advertencia","Nombre inválido. Por favor, introduce un nombre que tenga al menos 3 caracteres y esté compuesto solo por letras. Se permiten un espacio entre nombres adicionales. Ejemplo: Juan Ramón Ariel","OK");
+                    await DisplayAlert("Advertencia","Nombre inválido. Por favor, introduce un nombre que tenga al menos 3 caracteres y esté compuesto solo por letras.","OK");
                 }
             }
         }
