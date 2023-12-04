@@ -10,13 +10,14 @@ public partial class Page_transfer_or_payment_result:ContentPage {
     string email_reciving;
     public Page_transfer_or_payment_result() {
         InitializeComponent();
+        lbl_code.Text="N° comprobante: "+Temporary_data.code_record;
+
         select_user_send();
         select_user_reciving();
     }
 
     protected override async void OnAppearing() {
         base.OnAppearing();
-
         await select_record();
     }
 
